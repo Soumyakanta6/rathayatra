@@ -1,0 +1,9 @@
+{
+  "build": {
+    "env": {
+      "CI": "false",
+      "DISABLE_ESLINT_PLUGIN": "true"
+    }
+  },
+  "framework": "create-react-app"
+}
