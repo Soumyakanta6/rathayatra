@@ -1,12 +1,15 @@
 import React from 'react';
 import './Header.css';
+import Logo from './Logo';
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header-content">
         <div className="header-logo">
-          <span className="chakra">☸</span>
+          <div className="logo-wrapper">
+            <Logo size={56} />
+          </div>
           <div className="header-text">
             <h1>Jagannath Ratha Yatra 2026</h1>
             <p className="header-subtitle">Prestige Finsbury Park (Regent & Hyde), Bangalore</p>

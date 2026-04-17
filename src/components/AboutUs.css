@@ -565,6 +565,12 @@
   font-size: 0.85rem;
 }
 
+.comm-actual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Team Section */
 .our-team {
   padding: 5rem 0;

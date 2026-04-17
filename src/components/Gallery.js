@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
+// Import gallery images
+import RathRaw from '../assets/images/Rath_raw.jpeg';
+import LordOnThrone from '../assets/images/Lord_on_his_throne.jpeg';
+import RathPull from '../assets/images/Rath_pull.jpeg';
+import Society from '../assets/images/society.jpg';
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -15,18 +21,18 @@ const Gallery = () => {
 
   // Placeholder images with emojis representing different aspects
   const galleryImages = [
-    { id: 1, category: 'rath', title: 'Grand Rath Decoration', emoji: '🛕', description: 'The beautifully decorated chariot ready for the procession' },
+    { id: 1, category: 'rath', title: 'Grand Rath Decoration', emoji: '🛕', description: 'The beautifully decorated chariot ready for the procession', image: RathRaw },
     { id: 2, category: 'rath', title: 'Floral Arrangements', emoji: '🌸', description: 'Fresh flowers adorning the sacred chariot' },
     { id: 3, category: 'celebration', title: 'Community Gathering', emoji: '👨‍👩‍👧‍👦', description: 'Devotees coming together in celebration' },
     { id: 4, category: 'celebration', title: 'Cultural Dance', emoji: '💃', description: 'Traditional Odissi dance performance' },
     { id: 5, category: 'prasad', title: 'Mahaprasad Thali', emoji: '🍛', description: 'Sacred prasad prepared with devotion' },
     { id: 6, category: 'prasad', title: 'Sweet Offerings', emoji: '🍮', description: 'Traditional sweets offered to the Lord' },
-    { id: 7, category: 'devotees', title: 'Pulling the Rath', emoji: '🙏', description: 'Devotees pulling the sacred chariot' },
+    { id: 7, category: 'devotees', title: 'Pulling the Rath', emoji: '🙏', description: 'Devotees pulling the sacred chariot', image: RathPull },
     { id: 8, category: 'devotees', title: 'Morning Prayers', emoji: '🕯️', description: 'Devotees offering morning prayers' },
-    { id: 9, category: 'rath', title: 'Deity Installation', emoji: '✨', description: 'Lords being placed on the chariot' },
+    { id: 9, category: 'rath', title: 'Deity Installation', emoji: '✨', description: 'Lords being placed on the chariot', image: LordOnThrone },
     { id: 10, category: 'celebration', title: 'Kirtan Session', emoji: '🎶', description: 'Devotional singing and chanting' },
     { id: 11, category: 'celebration', title: 'Evening Aarti', emoji: '🪔', description: 'Beautiful evening aarti ceremony' },
-    { id: 12, category: 'devotees', title: 'Children Celebration', emoji: '🧒', description: 'Young devotees participating' },
+    { id: 12, category: 'celebration', title: 'Township View', emoji: '🏘️', description: 'Prestige Finsbury Park township', image: Society },
   ];
 
   const filteredImages = activeCategory === 'all' 
@@ -60,9 +66,13 @@ const Gallery = () => {
             onClick={() => setSelectedImage(image)}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="image-placeholder">
-              <span className="placeholder-emoji">{image.emoji}</span>
-            </div>
+            {image.image ? (
+              <img src={image.image} alt={image.title} className="gallery-image" />
+            ) : (
+              <div className="image-placeholder">
+                <span className="placeholder-emoji">{image.emoji}</span>
+              </div>
+            )}
             <div className="image-overlay">
               <h4>{image.title}</h4>
               <p>{image.description}</p>
@@ -103,7 +113,11 @@ const Gallery = () => {
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setSelectedImage(null)}>×</button>
             <div className="modal-image">
-              <span className="modal-emoji">{selectedImage.emoji}</span>
+              {selectedImage.image ? (
+                <img src={selectedImage.image} alt={selectedImage.title} className="modal-img" />
+              ) : (
+                <span className="modal-emoji">{selectedImage.emoji}</span>
+              )}
             </div>
             <div className="modal-info">
               <h3>{selectedImage.title}</h3>

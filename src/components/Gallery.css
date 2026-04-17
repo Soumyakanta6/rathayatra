@@ -101,6 +101,17 @@
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
 }
 
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
 .placeholder-emoji {
   font-size: 5rem;
   filter: grayscale(0);
@@ -304,15 +315,24 @@
 }
 
 .modal-image {
-  height: 300px;
+  min-height: 300px;
+  max-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+  overflow: hidden;
 }
 
 .modal-emoji {
   font-size: 8rem;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
 .modal-info {

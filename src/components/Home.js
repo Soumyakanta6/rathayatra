@@ -29,8 +29,8 @@ const Home = () => {
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  // TODO: Replace with your actual Google Form embed URL
-  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true';
+  // Google Form URL for volunteer registration
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfvNBe9t1SPHpgEK8DA/viewform?embedded=true';
 
   const eventSchedule = [
     {
@@ -538,10 +538,10 @@ const Home = () => {
               Register Now
               <span className="btn-shine"></span>
             </button>
-            <button className="cta-btn secondary" onClick={() => setShowVolunteerForm(true)}>
+            <a href="https://forms.gle/vNBe9t1SPHpgEK8DA" target="_blank" rel="noopener noreferrer" className="cta-btn secondary">
               <span className="btn-icon">🤝</span>
               Become a Volunteer
-            </button>
+            </a>
           </div>
           <div className="cta-trust">
             <span>✨ 1000+ Devotees</span>

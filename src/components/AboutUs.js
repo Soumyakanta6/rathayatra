@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
+import SocietyImg from '../assets/images/society.jpg';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -179,10 +180,7 @@ const AboutUs = () => {
             <div className="community-images">
               <div className="community-img-grid">
                 <div className="comm-img large">
-                  <div className="img-placeholder gradient-3">
-                    <span>🏢</span>
-                    <p>Township View</p>
-                  </div>
+                  <img src={SocietyImg} alt="Township View" className="comm-actual-img" />
                 </div>
                 <div className="comm-img small">
                   <div className="img-placeholder gradient-4">
