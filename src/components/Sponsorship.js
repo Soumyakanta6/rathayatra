@@ -295,8 +295,6 @@ Jai Jagannath! 🙏
               <span className="reason-icon">🤝</span>
               <h3>Networking</h3>
               <p>Connect with community leaders, business owners, and like-minded individuals</p>
-              <ul className="reason-points">
-                <li>VIP networking lounge access</li>
                 <li>Meet community influencers</li>
                 <li>Business collaboration opportunities</li>
                 <li>Special place to showcase your business</li>
