@@ -254,7 +254,6 @@ Jai Jagannath! 🙏
               <p>Receive the sacred blessings of Lord Jagannath, Balabhadra & Subhadra for eternal prosperity</p>
               <ul className="reason-points">
                 <li>Special prayers in your name</li>
-                <li>Prasad delivered to your home</li>
                 <li>Participation in sacred rituals</li>
               </ul>
             </div>
@@ -276,7 +275,7 @@ Jai Jagannath! 🙏
               <p>Premium exposure to a highly engaged audience across multiple channels</p>
               <ul className="reason-points">
                 <li>Logo on banners & standees</li>
-                <li>Social media mentions (50K+ reach)</li>
+                <li>Social media mentions</li>
                 <li>Featured in event documentation</li>
               </ul>
             </div>
@@ -300,6 +299,7 @@ Jai Jagannath! 🙏
                 <li>VIP networking lounge access</li>
                 <li>Meet community influencers</li>
                 <li>Business collaboration opportunities</li>
+                <li>Special place to showcase your business</li>
               </ul>
             </div>
           </div>
