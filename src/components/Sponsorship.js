@@ -131,7 +131,7 @@ Jai Jagannath! 🙏
     {
       id: 'bhog',
       name: 'Mahaprasad Sponsor',
-      amount: '₹10,000',
+      amount: '₹25,000',
       icon: '🍛',
       color: '#f7931e',
       popular: true,
@@ -139,8 +139,10 @@ Jai Jagannath! 🙏
       benefits: [
         'Prasad preparation sponsorship',
         'Name in prasad serving area',
+        'Reserved seating for 5 guests',
+        'Special prasad package',
         'Certificate of appreciation',
-        'Prasad for for 20 families',
+        'Prasad delivery for 25 families',
       ],
     },
     {
@@ -153,8 +155,9 @@ Jai Jagannath! 🙏
       benefits: [
         'Flower decoration sponsorship',
         'Name in event program',
-        'Certificate of appreciation',
+        'Reserved seating for 3 guests',
         'Prasad for family',
+        'Certificate of appreciation',
       ],
     },
     {
@@ -167,6 +170,7 @@ Jai Jagannath! 🙏
       benefits: [
         'Lamp lighting ceremony participation',
         'Name in donor list',
+        'Reserved seating for 2 guests',
         'Prasad for family',
       ],
     },
@@ -181,21 +185,33 @@ Jai Jagannath! 🙏
         'Contribute any amount',
         'Name in donor list',
         'Divine blessings',
+        'Prasad packet',
       ],
     },
   ];
 
   const currentSponsors = [
     { name: 'Prestige Group', tier: 'Venue Partner', emoji: '🏢' },
-    { name: 'To be Decided', tier: 'Religious Partner', emoji: '🛕' },
-    { name: 'To Be Decided', tier: 'Event Partner', emoji: '🎭' },
+    { name: 'Temple Trust', tier: 'Religious Partner', emoji: '🛕' },
+    { name: 'Cultural Association', tier: 'Event Partner', emoji: '🎭' },
   ];
 
   return (
     <div className="sponsorship">
-      <section className="sponsorship-header">
-        <h1>🤝 Become a Sponsor</h1>
-        <p>Support the divine celebration and earn the blessings of Lord Jagannath</p>
+      <section className="sponsorship-hero">
+        <div className="hero-overlay"></div>
+        <div className="hero-particles">
+          <span className="particle">🤝</span>
+          <span className="particle">✨</span>
+          <span className="particle">🛕</span>
+          <span className="particle">🪔</span>
+          <span className="particle">🌸</span>
+        </div>
+        <div className="hero-content">
+          <span className="hero-badge">🤝 Divine Partnership</span>
+          <h1>Become a Sponsor</h1>
+          <p>Support the divine celebration and earn the blessings of Lord Jagannath</p>
+        </div>
       </section>
 
       <section className="why-sponsor">

@@ -41,9 +41,20 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      <section className="gallery-header">
-        <h1>📸 Photo Gallery</h1>
-        <p>Relive the divine moments from our previous Ratha Yatra celebrations</p>
+      <section className="gallery-hero">
+        <div className="hero-overlay"></div>
+        <div className="hero-particles">
+          <span className="particle">📷</span>
+          <span className="particle">🎭</span>
+          <span className="particle">🛕</span>
+          <span className="particle">🪔</span>
+          <span className="particle">🌸</span>
+        </div>
+        <div className="hero-content">
+          <span className="hero-badge">📸 Memories</span>
+          <h1>Photo Gallery</h1>
+          <p>Relive the divine moments from our previous Ratha Yatra celebrations</p>
+        </div>
       </section>
 
       <section className="gallery-categories">

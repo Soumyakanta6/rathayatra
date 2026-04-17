@@ -35,20 +35,32 @@ const AboutUs = () => {
           <span className="hero-badge">🙏 Jai Jagannath</span>
           <h1>About Our Community</h1>
           <p>Preserving sacred traditions at Prestige Finsbury Park, Bangalore</p>
-          <div className="hero-stats">
-            <div className="hero-stat">
-              <span className="hero-stat-number">500+</span>
-              <span className="hero-stat-label">Devotees</span>
+        </div>
+      </section>
+
+      {/* Community Statistics Section */}
+      <section className="community-stats-section">
+        <div className="container">
+          <div className="stats-grid">
+            <div className="stat-card">
+              <span className="stat-icon">🙏</span>
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Devotees</span>
             </div>
-            <div className="hero-stat-divider"></div>
-            <div className="hero-stat">
-              <span className="hero-stat-number">2000+</span>
-              <span className="hero-stat-label">Prasad Served</span>
+            <div className="stat-card">
+              <span className="stat-icon">🍛</span>
+              <span className="stat-number">2000+</span>
+              <span className="stat-label">Prasad Served</span>
             </div>
-            <div className="hero-stat-divider"></div>
-            <div className="hero-stat">
-              <span className="hero-stat-number">2025</span>
-              <span className="hero-stat-label">Est. Year</span>
+            <div className="stat-card">
+              <span className="stat-icon">📅</span>
+              <span className="stat-number">2025</span>
+              <span className="stat-label">Est. Year</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-icon">🎊</span>
+              <span className="stat-number">2nd</span>
+              <span className="stat-label">Annual Celebration</span>
             </div>
           </div>
         </div>

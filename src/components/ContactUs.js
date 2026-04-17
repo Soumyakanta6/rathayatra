@@ -60,15 +60,22 @@ const ContactUs = () => {
     <div className="contact-page">
       {/* Hero */}
       <section className="contact-hero">
-        <div className="hero-bg-pattern"></div>
-        <div className="container">
-          <span className="hero-icon">🙏</span>
+        <div className="hero-overlay"></div>
+        <div className="hero-particles">
+          <span className="particle">🙏</span>
+          <span className="particle">✨</span>
+          <span className="particle">🛕</span>
+          <span className="particle">🪔</span>
+          <span className="particle">🌸</span>
+        </div>
+        <div className="hero-content">
+          <span className="hero-badge">📧 Reach Out</span>
           <h1>Get in Touch</h1>
           <p>Have questions about Ratha Yatra 2026? We'd love to hear from you!</p>
         </div>
       </section>
 
-      {/* Quick Contact Bar */}
+      {/* Quick Contact Bar */}}
       <section className="quick-contact-bar">
         <div className="container">
           <div className="quick-links">
