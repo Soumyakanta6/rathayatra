@@ -1,7 +1,12 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ setActiveTab }) => {
+  const handleNavClick = (tab) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -9,12 +14,9 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="brand-logo">
               <span className="footer-chakra">☸</span>
-              <h3>Jagannath Ratha Yatra</h3>
+              <h3>Jagannath Ratha Yatra 2026</h3>
             </div>
-            <p>
-              Celebrating the divine journey of Lord Jagannath at Prestige Finsbury Park, Bangalore.
-              Join us in this sacred tradition of devotion and community.
-            </p>
+            <p>Celebrating Lord Jagannath's divine journey at Prestige Finsbury Park, Bangalore</p>
             <div className="footer-social">
               <a href="#" className="social-icon">📘</a>
               <a href="#" className="social-icon">📸</a>
@@ -26,34 +28,34 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Ratha Yatra</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Sponsorship</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><button onClick={() => handleNavClick('home')}>Home</button></li>
+              <li><button onClick={() => handleNavClick('about')}>About</button></li>
+              <li><button onClick={() => handleNavClick('gallery')}>Gallery</button></li>
+              <li><button onClick={() => handleNavClick('sponsorship')}>Sponsorship</button></li>
+              <li><button onClick={() => handleNavClick('contact')}>Contact</button></li>
             </ul>
           </div>
 
           <div className="footer-links">
             <h4>Get Involved</h4>
             <ul>
-              <li><a href="#">Become a Volunteer</a></li>
-              <li><a href="#">Sponsor the Event</a></li>
-              <li><a href="#">Donate</a></li>
-              <li><a href="#">Cultural Programs</a></li>
-              <li><a href="#">Prasad Seva</a></li>
+              <li><button onClick={() => handleNavClick('home')}>Volunteer</button></li>
+              <li><button onClick={() => handleNavClick('sponsorship')}>Sponsor</button></li>
+              <li><button onClick={() => handleNavClick('sponsorship')}>Donate</button></li>
+              <li><button onClick={() => handleNavClick('home')}>Programs</button></li>
+              <li><button onClick={() => handleNavClick('home')}>Prasad Seva</button></li>
             </ul>
           </div>
 
           <div className="footer-contact">
-            <h4>Contact Info</h4>
+            <h4>Contact</h4>
             <div className="contact-item">
               <span>📍</span>
-              <p>Prestige Finsbury Park,<br />KIADB Aerospace Park, Gummanahalli,<br />Bangalore - 562149</p>
+              <p>Prestige Finsbury Park, Bangalore</p>
             </div>
             <div className="contact-item">
               <span>📧</span>
-              <p>jagannath.finsbury@gmail.com</p>
+              <p>jagannathrathayatra.pfp@gmail.com</p>
             </div>
             <div className="contact-item">
               <span>📞</span>
@@ -66,13 +68,13 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="copyright">
-            <p>© 2026 Jagannath Ratha Yatra - Prestige Finsbury Park. All rights reserved.</p>
+            <p>© 2026 Jagannath Ratha Yatra - Prestige Finsbury Park</p>
           </div>
           <div className="footer-mantra">
-            <p>🙏 जय जगन्नाथ | Jai Jagannath 🙏</p>
+            <p>🙏 Jai Jagannath 🙏</p>
           </div>
           <div className="footer-credits">
-            <p>Made with ❤️ by the Community</p>
+            <p>Made with ❤️ by Community</p>
           </div>
         </div>
       </div>

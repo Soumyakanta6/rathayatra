@@ -1,6 +1,6 @@
 {
   "buildCommand": "CI=false npm run build",
-  "framework": "create-react-app"
+  "framework": "create-react-app",
   "env": {
     "CI": "false",
     "DISABLE_ESLINT_PLUGIN": "true"

@@ -26,6 +26,92 @@ const DeityImage = ({ imageName, alt, fallbackEmoji }) => {
 };
 
 const Home = () => {
+  const [showVolunteerForm, setShowVolunteerForm] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  // TODO: Replace with your actual Google Form embed URL
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true';
+
+  const eventSchedule = [
+    {
+      id: 1,
+      date: '16 Jul',
+      icon: '🚜',
+      title: 'CHARIOT PULLING',
+      type: 'main-event',
+      time: '4:00 PM onwards',
+      venue: 'Starting from Club House (Regent)',
+      description: 'The grand Ratha Yatra procession begins! Join us in pulling the beautifully decorated chariot through our community. Experience the divine joy as we sing bhajans and celebrate the glory of Lord Jagannath.',
+      highlights: ['Chariot decoration viewing', 'Community participation', 'Bhajan & Kirtan', 'Prasad distribution']
+    },
+    {
+      id: 2,
+      date: '18 Jul',
+      icon: '🎭',
+      title: 'Cultural Bash @ Regent',
+      type: '',
+      time: '6:00 PM - 9:00 PM',
+      venue: 'Regent Club House',
+      description: 'An evening filled with music, dance, and cultural performances. Witness talented artists from our community showcase traditional and contemporary performances.',
+      highlights: ['Classical dance performances', 'Devotional songs', 'Kids performances', 'Community talent showcase']
+    },
+    {
+      id: 3,
+      date: '19 Jul',
+      icon: '🎨',
+      title: 'Cultural Magic @ Hyde',
+      type: '',
+      time: '6:00 PM - 9:00 PM',
+      venue: 'Hyde Club House',
+      description: 'Spectacular cultural performances at Hyde Club House. A magical evening celebrating art, music, and devotion.',
+      highlights: ['Folk dance performances', 'Musical evening', 'Art exhibition', 'Interactive sessions']
+    },
+    {
+      id: 4,
+      date: '20 Jul',
+      icon: '🌺',
+      title: 'Hera Panchami',
+      type: '',
+      time: '6:00 PM onwards',
+      venue: 'Hyde Club House',
+      description: 'Traditional Hera Panchami celebrations honoring Goddess Lakshmi. According to tradition, Goddess Lakshmi visits the chariot to see Lord Jagannath.',
+      highlights: ['Special puja ceremonies', 'Traditional rituals', 'Devotional programs', 'Prasad distribution']
+    },
+    {
+      id: 5,
+      date: '23 Jul',
+      icon: '🌅',
+      title: 'Sandhya Darshan',
+      type: '',
+      time: '6:30 PM - 8:30 PM',
+      venue: 'Both Regent & Hyde',
+      description: 'Evening darshan and spiritual discourse. A serene evening of devotion, meditation, and connecting with the divine.',
+      highlights: ['Evening aarti', 'Spiritual discourse', 'Meditation session', 'Bhajan sandhya']
+    },
+    {
+      id: 6,
+      date: '24 Jul',
+      icon: '🔄',
+      title: 'Bahuda Yatra',
+      type: 'highlight',
+      time: '4:00 PM onwards',
+      venue: 'Starting from Club House (Hyde)',
+      description: 'The return journey of Lord Jagannath! Pull the chariot back home as the deities return to their abode. A triumphant celebration of devotion.',
+      highlights: ['Return chariot procession', 'Community participation', 'Bhajan & Kirtan', 'Festive celebrations']
+    },
+    {
+      id: 7,
+      date: '25 Jul',
+      icon: '👑',
+      title: 'Suna Besha + Maha Prasad',
+      type: 'grand-finale',
+      time: '5:00 PM onwards',
+      venue: 'Hyde @ Hyde | Regent @ Regent',
+      description: 'The grand finale! Witness the deities adorned in golden attire (Suna Besha) followed by Maha Prasad Feast. A divine culmination of the 10-day festival.',
+      highlights: ['Golden attire decoration', 'Special darshan', 'Maha Prasad feast', 'Community celebration']
+    }
+  ];
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -44,141 +130,269 @@ const Home = () => {
       </section>
 
       {/* About Ratha Yatra */}
-      <section className="info-section">
+      <section className="about-section">
         <div className="container">
           <h2 className="section-title">
             <span className="title-icon">☸</span>
             About Ratha Yatra
           </h2>
-          <div className="info-content">
-            <div className="info-card">
+          <div className="about-content">
+            <div className="about-main">
+              <div className="about-icon-badge">🛞</div>
               <h3>The Festival of Chariots</h3>
               <p>
-                Ratha Yatra, also known as the Festival of Chariots, is one of the most ancient and grand
-                festivals of India. It celebrates the annual journey of Lord Jagannath, along with his
-                siblings Lord Balabhadra and Goddess Subhadra, from their abode in the Jagannath Temple
-                to the Gundicha Temple.
+                Ratha Yatra celebrates the annual journey of Lord Jagannath, along with Lord Balabhadra 
+                and Goddess Subhadra. The word literally means "Chariot Journey" in Sanskrit.
               </p>
-              <p>
-                The word "Ratha Yatra" literally means "Chariot Journey" in Sanskrit. This magnificent
-                festival originated in Puri, Odisha, and is now celebrated with great fervor across
-                the world.
-              </p>
+              <div className="about-highlights">
+                <span className="highlight-tag">🏛️ Originated in Puri, Odisha</span>
+                <span className="highlight-tag">🌍 Celebrated Worldwide</span>
+                <span className="highlight-tag">📅 Ancient Tradition</span>
+              </div>
             </div>
-
-            <div className="info-card highlight">
-              <h3>🏛️ Prestige Finsbury Park Celebration</h3>
+            <div className="about-community">
+              <div className="community-badge">🏡</div>
+              <h4>Prestige Finsbury Park</h4>
               <p>
-                Join us for a divine celebration at Prestige Finsbury Park, Bangalore! Our community
-                comes together to honor this sacred tradition with devotion, music, dance, and
-                the distribution of Mahaprasad.
+                Join our community celebration with devotion, music, dance, and Mahaprasad distribution!
               </p>
-              <p>
-                Experience the spiritual joy as we pull the beautifully decorated chariot through
-                our community, singing bhajans and celebrating the glory of Lord Jagannath.
-              </p>
+              <div className="community-features">
+                <div className="feature-item">
+                  <span>🎶</span>
+                  <span>Bhajans & Kirtan</span>
+                </div>
+                <div className="feature-item">
+                  <span>🙏</span>
+                  <span>Chariot Pulling</span>
+                </div>
+                <div className="feature-item">
+                  <span>🍛</span>
+                  <span>Mahaprasad</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Procession Path */}
-      <section className="procession-section">
+      {/* The Divine Deities */}
+      <section className="deities-section">
         <div className="container">
           <h2 className="section-title">
-            <span className="title-icon">🛤️</span>
-            Procession Path (Day 1)
+            <span className="title-icon">🙏</span>
+            The Divine Deities
           </h2>
-          <div className="procession-path">
-            <div className="path-step">
-              <span className="path-icon">🏛️</span>
-              <span className="path-name">Club House (Regent)</span>
+          <p className="deities-subtitle">Meet the sacred trinity who bless us with their divine presence</p>
+          <div className="deities-showcase">
+            <div className="deity-card">
+              <div className="deity-glow blue"></div>
+              <div className="deity-image balabhadra">
+                <DeityImage imageName="balabhadra.png" alt="Lord Balabhadra" fallbackEmoji="🔵" />
+              </div>
+              <h3>Lord Balabhadra</h3>
+              <span className="deity-role">The Elder Brother</span>
+              <p>Representing strength, power, and agricultural prosperity</p>
             </div>
-            <div className="path-arrow">➡️</div>
-            <div className="path-step">
-              <span className="path-icon">🏢</span>
-              <span className="path-name">Blocks 13-14-15-16</span>
+            <div className="deity-card">
+              <div className="deity-glow orange"></div>
+              <div className="deity-image subhadra">
+                <DeityImage imageName="subhadra.png" alt="Goddess Subhadra" fallbackEmoji="🟠" />
+              </div>
+              <h3>Goddess Subhadra</h3>
+              <span className="deity-role">The Divine Sister</span>
+              <p>Grace, beauty, and divine feminine energy personified</p>
             </div>
-            <div className="path-arrow">➡️</div>
-            <div className="path-step">
-              <span className="path-icon">🚪</span>
-              <span className="path-name">Regent Exit → Hyde Entry</span>
+            <div className="deity-card featured">
+              <div className="deity-glow gold"></div>
+              <div className="deity-image jagannath">
+                <DeityImage imageName="jagannath.png" alt="Lord Jagannath" fallbackEmoji="🟡" />
+              </div>
+              <h3>Lord Jagannath</h3>
+              <span className="deity-role">Lord of the Universe</span>
+              <p>Embodying unconditional love and compassion for all beings</p>
             </div>
-            <div className="path-arrow">➡️</div>
-            <div className="path-step">
-              <span className="path-icon">🏗️</span>
-              <span className="path-name">Towers 3-4-5-7-8-9</span>
-            </div>
-            <div className="path-arrow">➡️</div>
-            <div className="path-step destination">
-              <span className="path-icon">🏛️</span>
-              <span className="path-name">Club House (Hyde)</span>
+            <div className="deity-card">
+              <div className="deity-glow red"></div>
+              <div className="deity-image sudarshan">
+                <DeityImage imageName="sudarshan.png" alt="Lord Sudarshan" fallbackEmoji="☸️" />
+              </div>
+              <h3>Lord Sudarshan</h3>
+              <span className="deity-role">The Divine Chakra</span>
+              <p>Symbolizing protection and the destruction of evil</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Event Schedule */}
-      <section className="schedule-section">
+      {/* Procession & Schedule Side by Side */}
+      <section className="path-schedule-section">
         <div className="container">
-          <h2 className="section-title">
-            <span className="title-icon">📅</span>
-            Festival Extravaganza Schedule
-          </h2>
-          <div className="schedule-grid">
-            <div className="schedule-item highlight main-event">
-              <div className="time">16 Jul</div>
-              <div className="event">
-                <h4>🚜 CHARIOT PULLING</h4>
-                <p>Pull with power & devotion! The grand Ratha Yatra procession begins!</p>
+          <div className="path-schedule-header">
+            <span className="path-schedule-badge">📜 Event Guide</span>
+            <h2 className="path-schedule-title">Sacred Journey & Celebrations</h2>
+            <p className="path-schedule-subtitle">Follow the divine procession route and join the festivities</p>
+          </div>
+          <div className="path-schedule-grid">
+            {/* Procession Path */}
+            <div className="path-card">
+              <h3 className="card-section-title">
+                <span>🛕</span> Procession Path (Day 1)
+              </h3>
+              <div className="procession-vertical">
+                <div className="path-stop start">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏛️</span>
+                    <span className="stop-name">Club House (Regent)</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏢</span>
+                    <span className="stop-name">Blocks 13-16</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🚪</span>
+                    <span className="stop-name">Regent → Hyde</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏗️</span>
+                    <span className="stop-name">Towers 3-9</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop destination">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🚩</span>
+                    <span className="stop-name">Club House (Hyde)</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="schedule-item">
-              <div className="time">18 Jul</div>
-              <div className="event">
-                <h4>🎭 Cultural Bash @ Regent</h4>
-                <p>Evening of music, dance, and cultural performances at Regent Club House</p>
+
+            {/* Event Schedule */}
+            <div className="schedule-card-wrapper">
+              <h3 className="card-section-title">
+                <span>📅</span> Festival Schedule
+              </h3>
+              <div className="schedule-vertical">
+                {eventSchedule.map((event) => (
+                  <div
+                    key={event.id}
+                    className={`schedule-row ${event.type}`}
+                    onClick={() => setSelectedEvent(event)}
+                  >
+                    <div className="row-date">{event.date}</div>
+                    <div className="row-icon">{event.icon}</div>
+                    <div className="row-title">{event.title}</div>
+                    <div className="row-arrow">›</div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="schedule-item">
-              <div className="time">19 Jul</div>
-              <div className="event">
-                <h4>🎨 Cultural Magic @ Hyde</h4>
-                <p>Spectacular cultural performances at Hyde Club House</p>
-              </div>
-            </div>
-            <div className="schedule-item">
-              <div className="time">20 Jul</div>
-              <div className="event">
-                <h4>🌺 Hera Panchami @ Hyde</h4>
-                <p>Traditional Hera Panchami celebrations honoring Goddess Lakshmi</p>
-              </div>
-            </div>
-            <div className="schedule-item">
-              <div className="time">23 Jul</div>
-              <div className="event">
-                <h4>🌅 Sandhya Darshan Bliss</h4>
-                <p>Evening darshan and spiritual discourse</p>
-              </div>
-            </div>
-            <div className="schedule-item highlight">
-              <div className="time">24 Jul</div>
-              <div className="event">
-                <h4>🔄 Bahuda Yatra Triumph!</h4>
-                <p>The return journey of Lord Jagannath - Pull the chariot back home!</p>
-              </div>
-            </div>
-            <div className="schedule-item highlight grand-finale">
-              <div className="time">25 Jul</div>
-              <div className="event">
-                <h4>👑 Suna Besha Glory + Maha Prasad Feast!</h4>
-                <p>Golden attire of the deities & grand prasad distribution<br/>
-                <span className="venue-note">Hyde @ Hyde | Regent @ Regent 🍛🥥✨</span></p>
+
+            {/* Procession Path Day 9 (Reverse) */}
+            <div className="path-card">
+              <h3 className="card-section-title">
+                <span>🔄</span> Procession Path (Day 9)
+              </h3>
+              <div className="procession-vertical">
+                <div className="path-stop start">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏛️</span>
+                    <span className="stop-name">Club House (Hyde)</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏗️</span>
+                    <span className="stop-name">Towers 3-9</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🚪</span>
+                    <span className="stop-name">Hyde → Regent</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🏢</span>
+                    <span className="stop-name">Blocks 13-16</span>
+                  </div>
+                </div>
+                <div className="path-line"></div>
+                <div className="path-stop destination">
+                  <div className="stop-dot"></div>
+                  <div className="stop-info">
+                    <span className="stop-icon">🚩</span>
+                    <span className="stop-name">Club House (Regent)</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Event Details Modal */}
+      {selectedEvent && (
+        <div className="event-modal-overlay" onClick={() => setSelectedEvent(null)}>
+          <div className="event-modal" onClick={e => e.stopPropagation()}>
+            <button className="event-modal-close" onClick={() => setSelectedEvent(null)}>×</button>
+            <div className={`event-modal-header ${selectedEvent.type}`}>
+              <span className="event-modal-icon">{selectedEvent.icon}</span>
+              <div className="event-modal-date">{selectedEvent.date}, 2026</div>
+              <h2>{selectedEvent.title}</h2>
+            </div>
+            <div className="event-modal-body">
+              <div className="event-detail-row">
+                <span className="detail-icon">⏰</span>
+                <div>
+                  <strong>Time</strong>
+                  <p>{selectedEvent.time}</p>
+                </div>
+              </div>
+              <div className="event-detail-row">
+                <span className="detail-icon">📍</span>
+                <div>
+                  <strong>Venue</strong>
+                  <p>{selectedEvent.venue}</p>
+                </div>
+              </div>
+              <div className="event-description">
+                <p>{selectedEvent.description}</p>
+              </div>
+              <div className="event-highlights">
+                <h4>✨ Highlights</h4>
+                <ul>
+                  {selectedEvent.highlights.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Flea Market */}
       <section className="fleamarket-section">
@@ -208,73 +422,57 @@ const Home = () => {
         </div>
       </section>
 
-      {/* The Deities */}
-      <section className="deities-section">
-        <div className="container">
-          <h2 className="section-title">
-            <span className="title-icon">🙏</span>
-            The Divine Deities
-          </h2>
-          <div className="deities-grid">
-            <div className="deity-card">
-              <div className="deity-image balabhadra">
-                <DeityImage imageName="balabhadra.png" alt="Lord Balabhadra" fallbackEmoji="🔵" />
-              </div>
-              <h3>Lord Balabhadra</h3>
-              <p>The elder brother of Lord Jagannath, representing strength and power</p>
-            </div>
-            <div className="deity-card featured">
-              <div className="deity-image jagannath">
-                <DeityImage imageName="jagannath.png" alt="Lord Jagannath" fallbackEmoji="🟡" />
-              </div>
-              <h3>Lord Jagannath</h3>
-              <p>The Lord of the Universe, embodying love and compassion for all beings</p>
-            </div>
-            <div className="deity-card">
-              <div className="deity-image subhadra">
-                <DeityImage imageName="subhadra.png" alt="Goddess Subhadra" fallbackEmoji="🟠" />
-              </div>
-              <h3>Goddess Subhadra</h3>
-              <p>The beloved sister, representing grace and divine feminine energy</p>
-            </div>
-            <div className="deity-card">
-              <div className="deity-image sudarshan">
-                <DeityImage imageName="sudarshan.png" alt="Lord Sudarshan" fallbackEmoji="☸️" />
-              </div>
-              <h3>Lord Sudarshan</h3>
-              <p>The divine chakra, symbolizing protection and the destruction of evil</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Significance */}
+      {/* Spiritual Significance */}
       <section className="significance-section">
+        <div className="significance-bg-decor">
+          <div className="floating-chakra chakra-1">☸</div>
+          <div className="floating-chakra chakra-2">☸</div>
+          <div className="floating-chakra chakra-3">☸</div>
+          <div className="sparkle s1">✦</div>
+          <div className="sparkle s2">✦</div>
+          <div className="sparkle s3">✦</div>
+          <div className="sparkle s4">✦</div>
+        </div>
         <div className="container">
-          <h2 className="section-title">
-            <span className="title-icon">✨</span>
-            Spiritual Significance
-          </h2>
+          <div className="significance-header">
+            <span className="significance-badge">🙏 Sacred Wisdom</span>
+            <h2 className="significance-title">
+              Spiritual Significance
+            </h2>
+            <p className="significance-subtitle">Discover the divine meaning behind this sacred festival</p>
+          </div>
           <div className="significance-grid">
             <div className="significance-item">
-              <span className="sig-icon">🌟</span>
+              <div className="sig-icon-wrapper">
+                <span className="sig-icon">🌟</span>
+                <div className="sig-glow"></div>
+              </div>
               <h4>Equal Darshan</h4>
-              <p>During Ratha Yatra, Lord Jagannath comes out of the temple to give darshan to all, regardless of caste, creed, or social status.</p>
+              <p>Lord Jagannath comes out to give darshan to all, regardless of caste, creed, or status - embodying divine equality.</p>
             </div>
             <div className="significance-item">
-              <span className="sig-icon">🎗️</span>
-              <h4>Rope Pulling Merit</h4>
-              <p>It is believed that pulling the chariot rope grants the same merit as performing the Ashwamedha Yagna.</p>
+              <div className="sig-icon-wrapper">
+                <span className="sig-icon">🪢</span>
+                <div className="sig-glow"></div>
+              </div>
+              <h4>Sacred Rope Pulling</h4>
+              <p>Pulling the chariot rope grants merit equal to performing the Ashwamedha Yagna - an ancient Vedic blessing.</p>
             </div>
             <div className="significance-item">
-              <span className="sig-icon">🍚</span>
-              <h4>Mahaprasad</h4>
-              <p>The sacred food offered to Lord Jagannath, considered to be highly auspicious and blessed.</p>
+              <div className="sig-icon-wrapper">
+                <span className="sig-icon">🍚</span>
+                <div className="sig-glow"></div>
+              </div>
+              <h4>Divine Mahaprasad</h4>
+              <p>Sacred food blessed by Lord Jagannath, prepared without onion or garlic - considered highly auspicious.</p>
             </div>
             <div className="significance-item">
-              <span className="sig-icon">🌈</span>
-              <h4>Unity in Diversity</h4>
-              <p>Ratha Yatra brings together people from all walks of life, celebrating the universal message of love and devotion.</p>
+              <div className="sig-icon-wrapper">
+                <span className="sig-icon">🙌</span>
+                <div className="sig-glow"></div>
+              </div>
+              <h4>Unity in Devotion</h4>
+              <p>People from all backgrounds unite in love and devotion, celebrating the universal message of togetherness.</p>
             </div>
           </div>
         </div>
@@ -299,18 +497,6 @@ const Home = () => {
               </p>
               <div className="location-features">
                 <div className="feature">
-                  <span>🅿️</span>
-                  <span>Ample Parking Available</span>
-                </div>
-                <div className="feature">
-                  <span>🚌</span>
-                  <span>Public Transport Accessible</span>
-                </div>
-                <div className="feature">
-                  <span>♿</span>
-                  <span>Wheelchair Accessible</span>
-                </div>
-                <div className="feature">
                   <span>🚻</span>
                   <span>Clean Restroom Facilities</span>
                 </div>
@@ -333,15 +519,64 @@ const Home = () => {
 
       {/* Call to Action */}
       <section className="cta-section">
+        <div className="cta-bg-effects">
+          <div className="cta-ray ray-1"></div>
+          <div className="cta-ray ray-2"></div>
+          <div className="cta-ray ray-3"></div>
+          <div className="cta-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
         <div className="cta-content">
-          <h2>Join Us in This Divine Celebration!</h2>
-          <p>Be part of this auspicious occasion and receive the blessings of Lord Jagannath</p>
+          <div className="cta-badge">🎉 Limited Spots Available</div>
+          <h2>Join Us in This <span className="highlight">Divine Celebration!</span></h2>
+          <p>Be part of this auspicious occasion and receive the eternal blessings of Lord Jagannath, Balabhadra & Subhadra</p>
           <div className="cta-buttons">
-            <button className="cta-btn primary">Register Now</button>
-            <button className="cta-btn secondary">Become a Volunteer</button>
+            <button className="cta-btn primary">
+              <span className="btn-icon">🙏</span>
+              Register Now
+              <span className="btn-shine"></span>
+            </button>
+            <button className="cta-btn secondary" onClick={() => setShowVolunteerForm(true)}>
+              <span className="btn-icon">🤝</span>
+              Become a Volunteer
+            </button>
+          </div>
+          <div className="cta-trust">
+            <span>✨ 1000+ Devotees</span>
+            <span>🏛️ Traditional Rituals</span>
+            <span>🍲 Free Prasad</span>
           </div>
         </div>
       </section>
+
+      {/* Volunteer Form Modal */}
+      {showVolunteerForm && (
+        <div className="volunteer-modal-overlay" onClick={() => setShowVolunteerForm(false)}>
+          <div className="volunteer-modal google-form-modal" onClick={e => e.stopPropagation()}>
+            <button className="volunteer-modal-close" onClick={() => setShowVolunteerForm(false)}>×</button>
+            <div className="volunteer-modal-header">
+              <span className="volunteer-icon">🙏</span>
+              <h2>Become a Volunteer</h2>
+              <p>Join our team and be part of this divine celebration</p>
+            </div>
+            <div className="google-form-container">
+              <iframe
+                src={GOOGLE_FORM_URL}
+                title="Volunteer Registration Form"
+                width="100%"
+                height="500"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+              >
+                Loading form...
+              </iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

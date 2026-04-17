@@ -36,7 +36,7 @@ function App() {
       <main className="main-content">
         {renderContent()}
       </main>
-      <Footer />
+      <Footer setActiveTab={setActiveTab} />
     </div>
   );
 }
