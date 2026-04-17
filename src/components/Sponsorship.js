@@ -192,8 +192,8 @@ Jai Jagannath! 🙏
 
   const currentSponsors = [
     { name: 'Prestige Group', tier: 'Venue Partner', emoji: '🏢' },
-    { name: 'Temple Trust', tier: 'Religious Partner', emoji: '🛕' },
-    { name: 'Cultural Association', tier: 'Event Partner', emoji: '🎭' },
+    { name: '<To Be Decided>', tier: 'Religious Partner', emoji: '🛕' },
+    { name: '<To Be Decided>', tier: 'Event Partner', emoji: '🎭' },
   ];
 
   return (
