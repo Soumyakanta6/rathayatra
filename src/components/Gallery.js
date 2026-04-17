@@ -80,15 +80,6 @@ const Gallery = () => {
           </div>
         ))}
       </section>
-
-      <section className="upload-section">
-        <div className="upload-content">
-          <h2>📤 Share Your Moments</h2>
-          <p>Were you part of our previous celebrations? Share your photos with the community!</p>
-          <button className="upload-btn">Upload Photos</button>
-        </div>
-      </section>
-
       <section className="video-section">
         <h2>🎬 Video Highlights</h2>
         <div className="video-grid">
