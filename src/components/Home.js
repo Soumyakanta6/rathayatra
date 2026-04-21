@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
+import rathChariot from '../assets/images/Rath_1.jpeg';
+import prestigeIcon from '../assets/images/prestige_icon.jpg';
 
 const DeityImage = ({ imageName, alt, fallbackEmoji }) => {
   const [imageError, setImageError] = useState(false);
@@ -138,7 +140,9 @@ const Home = () => {
           </h2>
           <div className="about-content">
             <div className="about-main">
-              <div className="about-icon-badge">🛞</div>
+              <div className="about-icon-badge">
+                <img src={rathChariot} alt="Ratha Yatra Chariot" className="badge-img" />
+              </div>
               <h3>The Festival of Chariots</h3>
               <p>
                 Ratha Yatra celebrates the annual journey of Lord Jagannath, along with Lord Balabhadra 
@@ -151,7 +155,9 @@ const Home = () => {
               </div>
             </div>
             <div className="about-community">
-              <div className="community-badge">🏡</div>
+              <div className="community-badge">
+                <img src={prestigeIcon} alt="Prestige Finsbury Park" className="badge-img" />
+              </div>
               <h4>Prestige Finsbury Park</h4>
               <p>
                 Join our community celebration with devotion, music, dance, and Mahaprasad distribution!
