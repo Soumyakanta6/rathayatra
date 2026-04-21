@@ -1,3 +1,17 @@
 # https://www.robotstxt.org/robotstxt.html
+# Jagannath Ratha Yatra 2026 - Prestige Finsbury Park, Bangalore
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://jagannath-ratha-yatra.vercel.app/sitemap.xml

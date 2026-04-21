@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ratha Yatra 2026",
+  "name": "Jagannath Ratha Yatra 2026 - Prestige Finsbury Park",
+  "description": "Divine celebration of Lord Jagannath's Ratha Yatra at Prestige Finsbury Park, Bangalore",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ff6b35",
+  "background_color": "#1a1a2e",
+  "categories": ["events", "religion", "community"],
+  "lang": "en-IN"
 }

@@ -8,6 +8,7 @@ import Sponsorship from './components/Sponsorship';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
+import SponsorBanner from './components/SponsorBanner';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -29,10 +30,18 @@ function App() {
     }
   };
 
+  const handleSponsorBannerClick = () => {
+    setActiveTab('sponsorship');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="App">
       <Header />
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <div onClick={handleSponsorBannerClick} style={{ cursor: 'pointer' }}>
+        <SponsorBanner />
+      </div>
       <main className="main-content">
         {renderContent()}
       </main>
