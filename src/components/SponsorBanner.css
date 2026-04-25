@@ -1,6 +1,6 @@
 .sponsor-banner {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, #fff9f5 0%, #fef3e8 100%);
+  border-bottom: 1px solid rgba(205, 133, 63, 0.2);
   overflow: hidden;
   position: relative;
 }
@@ -13,8 +13,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 215, 0, 0.06) 0%, transparent 50%);
   pointer-events: none;
   animation: shimmer 8s ease-in-out infinite;
 }
@@ -111,14 +111,15 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(205, 133, 63, 0.15);
   white-space: nowrap;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.06);
 }
 
 .sponsor-item::before {
@@ -139,27 +140,27 @@
 
 .sponsor-item:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.12);
 }
 
 .sponsor-item.platinum {
-  border-color: rgba(229, 228, 226, 0.25);
-  background: linear-gradient(135deg, rgba(229, 228, 226, 0.08) 0%, rgba(192, 192, 192, 0.03) 100%);
+  border-color: rgba(192, 192, 192, 0.4);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(229, 228, 226, 0.3) 100%);
 }
 
 .sponsor-item.platinum:hover {
-  border-color: rgba(229, 228, 226, 0.5);
-  box-shadow: 0 8px 30px rgba(229, 228, 226, 0.15), 0 0 20px rgba(229, 228, 226, 0.1);
+  border-color: rgba(192, 192, 192, 0.6);
+  box-shadow: 0 8px 30px rgba(192, 192, 192, 0.2), 0 0 20px rgba(192, 192, 192, 0.1);
 }
 
 .sponsor-item.gold {
-  border-color: rgba(255, 215, 0, 0.2);
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.06) 0%, rgba(255, 193, 7, 0.02) 100%);
+  border-color: rgba(255, 215, 0, 0.35);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 215, 0, 0.15) 100%);
 }
 
 .sponsor-item.gold:hover {
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15), 0 0 20px rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.1);
 }
 
 /* Logo Wrapper */
@@ -205,7 +206,7 @@
 }
 
 .sponsor-name {
-  color: #fff;
+  color: #5d3a1a;
   font-weight: 600;
   font-size: 0.85rem;
   line-height: 1.2;
@@ -706,7 +707,7 @@
 }
 
 .sponsor-comparison-table thead th {
-  background: #1a1a2e;
+  background: linear-gradient(135deg, #cd853f, #daa520);
   color: #fff;
   font-weight: 600;
   font-size: 0.7rem;

@@ -396,86 +396,54 @@ ${partnerFormData.contactPerson}
     <div className="sponsorship">
       {/* Hero Section */}
       <section className="sponsor-hero">
-        <div className="hero-bg-animation">
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
+        <div className="hero-overlay"></div>
+        <div className="hero-particles">
+          <span className="particle">🤝</span>
+          <span className="particle">🙏</span>
+          <span className="particle">🛕</span>
+          <span className="particle">🪔</span>
+          <span className="particle">🌸</span>
         </div>
         <div className="hero-content">
-          <span className="hero-label">🤝 Divine Partnership</span>
+          <span className="hero-badge">🤝 Divine Partnership</span>
           <h1>Become a Sponsor</h1>
-          <p>Support the divine celebration and earn the blessings of Lord Jagannath</p>
-          <div className="hero-quick-stats">
-            <div className="quick-stat">
-              <span className="quick-stat-value">1500+</span>
-              <span className="quick-stat-label">Devotees</span>
-            </div>
-            <div className="quick-stat">
-              <span className="quick-stat-value">2000+</span>
-              <span className="quick-stat-label">Prasad</span>
-            </div>
-            <div className="quick-stat">
-              <span className="quick-stat-value">10</span>
-              <span className="quick-stat-label">Days</span>
-            </div>
-          </div>
+          <p>Support the celebration, receive divine blessings</p>
         </div>
       </section>
 
       {/* 2025 Sponsors Showcase */}
-      <section className="sponsors-showcase">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">🏆 2025 Success</span>
-            <h2>Our Valued Sponsors</h2>
-            <p>These organizations made Ratha Yatra 2025 a grand success</p>
-          </div>
-          
-          <div className="past-sponsors-row">
-            {pastSponsors.platinum.map((sponsor, index) => (
-              <div key={index} className="past-sponsor-card platinum" style={{ '--sponsor-color': sponsor.color }}>
-                <div className="sponsor-card-header">
-                  <div className="sponsor-logo-circle">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={sponsor.name} onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-                    ) : null}
-                    <span className="logo-fallback" style={{ display: sponsor.logo ? 'none' : 'block' }}>{sponsor.emoji}</span>
-                  </div>
-                  <div className="sponsor-card-info">
-                    <h3>{sponsor.name}</h3>
-                    <span className="sponsor-tier-label">💎 Platinum 2025</span>
-                  </div>
-                </div>
-                <p className="sponsor-card-tagline">{sponsor.tagline}</p>
-                <div className="sponsor-card-highlights">
-                  <span className="highlight-tag">✓ Main Stage</span>
-                  <span className="highlight-tag">✓ 500+ Impressions</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="past-sponsors-row gold-row">
-            {pastSponsors.gold.map((sponsor, index) => (
-              <div key={index} className="past-sponsor-card gold" style={{ '--sponsor-color': sponsor.color }}>
-                <div className="sponsor-card-header">
-                  <div className="sponsor-logo-circle">
-                    {sponsor.logo ? (
-                      <img src={sponsor.logo} alt={sponsor.name} onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-                    ) : null}
-                    <span className="logo-fallback" style={{ display: sponsor.logo ? 'none' : 'block' }}>{sponsor.emoji}</span>
-                  </div>
-                  <div className="sponsor-card-info">
-                    <h3>{sponsor.name}</h3>
-                    <span className="sponsor-tier-label">🥇 Gold 2025</span>
-                  </div>
-                </div>
-                <p className="sponsor-card-tagline">{sponsor.tagline}</p>
-                <div className="sponsor-card-highlights">
-                  <span className="highlight-tag">✓ Event Recognition</span>
-                  <span className="highlight-tag">✓ Community Reach</span>
-                </div>
-              </div>
-            ))}
+      <section className="sponsors-banner">
+        <div className="sponsors-banner-content">
+          <span className="sponsors-title">2025 Sponsors</span>
+          <div className="sponsors-divider"></div>
+          <div className="sponsors-track">
+            <div className="sponsor-group platinum-group">
+              <span className="tier-icon">💎</span>
+              {pastSponsors.platinum.map((sponsor, index) => (
+                <span key={index} className="sponsor-name">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={sponsor.name} className="sponsor-logo" />
+                  ) : (
+                    <span className="sponsor-emoji">{sponsor.emoji}</span>
+                  )}
+                  {sponsor.name}
+                </span>
+              ))}
+            </div>
+            <span className="tier-separator">|</span>
+            <div className="sponsor-group gold-group">
+              <span className="tier-icon">🥇</span>
+              {pastSponsors.gold.map((sponsor, index) => (
+                <span key={index} className="sponsor-name">
+                  {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={sponsor.name} className="sponsor-logo" />
+                  ) : (
+                    <span className="sponsor-emoji">{sponsor.emoji}</span>
+                  )}
+                  {sponsor.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

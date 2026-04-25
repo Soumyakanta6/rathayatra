@@ -232,6 +232,15 @@ const Home = () => {
 
       {/* Procession & Schedule Side by Side */}
       <section className="path-schedule-section">
+        <div className="significance-bg-decor">
+          <div className="floating-chakra chakra-1">☸</div>
+          <div className="floating-chakra chakra-2">☸</div>
+          <div className="floating-chakra chakra-3">☸</div>
+          <div className="sparkle s1">✦</div>
+          <div className="sparkle s2">✦</div>
+          <div className="sparkle s3">✦</div>
+          <div className="sparkle s4">✦</div>
+        </div>
         <div className="container">
           <div className="path-schedule-header">
             <span className="path-schedule-badge">📜 Event Guide</span>
@@ -420,9 +429,12 @@ const Home = () => {
             <div className="fleamarket-card hyde">
               <h3>🏪 Hyde Flea Market</h3>
               <div className="market-dates">
-                <span className="date-badge coming-soon">Dates Coming Soon</span>
+                <span className="date-badge">16th July</span>
+                <span className="date-badge">17th July</span>
+                <span className="date-badge">24th July</span>
               </div>
-              <p>Stay tuned for exciting market dates! ⏰</p>
+              <p className="tentative-note">* All dates are tentative</p>
+              <p>Vendor vibes ON! Shop handcrafts, traditional items & more!</p>
             </div>
           </div>
         </div>
@@ -525,35 +537,20 @@ const Home = () => {
 
       {/* Call to Action */}
       <section className="cta-section">
-        <div className="cta-bg-effects">
-          <div className="cta-ray ray-1"></div>
-          <div className="cta-ray ray-2"></div>
-          <div className="cta-ray ray-3"></div>
-          <div className="cta-particles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
-        </div>
         <div className="cta-content">
-          <div className="cta-badge">🎉 Limited Spots Available</div>
-          <h2>Join Us in This <span className="highlight">Divine Celebration!</span></h2>
-          <p>Be part of this auspicious occasion and receive the eternal blessings of Lord Jagannath, Balabhadra & Subhadra</p>
-          <div className="cta-buttons">
-            <button className="cta-btn primary">
-              <span className="btn-icon">🙏</span>
-              Register Now
-              <span className="btn-shine"></span>
-            </button>
-            <a href="https://forms.gle/vNBe9t1SPHpgEK8DA" target="_blank" rel="noopener noreferrer" className="cta-btn secondary">
-              <span className="btn-icon">🤝</span>
-              Become a Volunteer
-            </a>
+          <div className="cta-left">
+            <h2>Join Us in This <span className="highlight">Divine Celebration!</span></h2>
+            <div className="cta-trust">
+              <span>✨ 1000+ Devotees</span>
+              <span>🏛️ Traditional Rituals</span>
+              <span>🍲 Free Prasad</span>
+            </div>
           </div>
-          <div className="cta-trust">
-            <span>✨ 1000+ Devotees</span>
-            <span>🏛️ Traditional Rituals</span>
-            <span>🍲 Free Prasad</span>
-          </div>
+          <a href="https://forms.gle/vNBe9t1SPHpgEK8DA" target="_blank" rel="noopener noreferrer" className="cta-btn primary">
+            <span className="btn-icon">🤝</span>
+            Become a Volunteer
+            <span className="btn-shine"></span>
+          </a>
         </div>
       </section>
 

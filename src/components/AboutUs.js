@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 import SocietyImg from '../assets/images/society.jpg';
+import EventAreaImg from '../assets/images/prestige_event_area_1.jpg';
 
 const AboutUs = () => {
   const teamMembers = [
@@ -41,26 +42,34 @@ const AboutUs = () => {
       {/* Community Statistics Section */}
       <section className="community-stats-section">
         <div className="container">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <span className="stat-icon">🙏</span>
-              <span className="stat-number">500+</span>
-              <span className="stat-label">Devotees</span>
+          <div className="stats-row">
+            <div className="stat-box">
+              <span className="stat-box-icon">🙏</span>
+              <div className="stat-box-content">
+                <span className="stat-box-number">500+</span>
+                <span className="stat-box-label">Devotees</span>
+              </div>
             </div>
-            <div className="stat-card">
-              <span className="stat-icon">🍛</span>
-              <span className="stat-number">2000+</span>
-              <span className="stat-label">Prasad Served</span>
+            <div className="stat-box">
+              <span className="stat-box-icon">🍛</span>
+              <div className="stat-box-content">
+                <span className="stat-box-number">2000+</span>
+                <span className="stat-box-label">Prasad Served</span>
+              </div>
             </div>
-            <div className="stat-card">
-              <span className="stat-icon">📅</span>
-              <span className="stat-number">2025</span>
-              <span className="stat-label">Est. Year</span>
+            <div className="stat-box">
+              <span className="stat-box-icon">📅</span>
+              <div className="stat-box-content">
+                <span className="stat-box-number">2025</span>
+                <span className="stat-box-label">Est. Year</span>
+              </div>
             </div>
-            <div className="stat-card">
-              <span className="stat-icon">🎊</span>
-              <span className="stat-number">2nd</span>
-              <span className="stat-label">Annual Celebration</span>
+            <div className="stat-box">
+              <span className="stat-box-icon">🎊</span>
+              <div className="stat-box-content">
+                <span className="stat-box-number">2nd</span>
+                <span className="stat-box-label">Annual Celebration</span>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +137,7 @@ const AboutUs = () => {
         <div className="mission-bg"></div>
         <div className="container">
           <div className="mission-header">
-            <span className="section-badge light">🎯 Purpose</span>
+            <span className="section-badge">🎯 Purpose</span>
             <h2>Our Mission & Values</h2>
             <p>Guided by devotion, united in service</p>
           </div>
@@ -201,10 +210,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="comm-img small">
-                  <div className="img-placeholder gradient-5">
-                    <span>🎪</span>
-                    <p>Event Area</p>
-                  </div>
+                  <img src={EventAreaImg} alt="Event Area" className="comm-actual-img" />
                 </div>
               </div>
             </div>
@@ -220,14 +226,14 @@ const AboutUs = () => {
             <h2>Organizing Committee</h2>
             <p>Meet the dedicated volunteers who make this celebration possible</p>
           </div>
-          <div className="team-grid">
+          <div className="team-boxes">
             {teamMembers.map((member, index) => (
-              <div key={index} className="team-card">
-                <div className="member-avatar-wrap">
-                  <div className="member-avatar">{member.emoji}</div>
+              <div key={index} className="team-box">
+                <span className="team-box-icon">{member.emoji}</span>
+                <div className="team-box-info">
+                  <span className="team-box-role">{member.role}</span>
+                  <span className="team-box-name">{member.name}</span>
                 </div>
-                <h4>{member.name}</h4>
-                <p>{member.role}</p>
               </div>
             ))}
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 
 // Import gallery images
@@ -6,10 +6,45 @@ import RathRaw from '../assets/images/Rath_raw.jpeg';
 import LordOnThrone from '../assets/images/Lord_on_his_throne.jpeg';
 import RathPull from '../assets/images/Rath_pull.jpeg';
 import Society from '../assets/images/society.jpg';
+import PrestigeView from '../assets/images/prestige_view_1.webp';
+
+// Import decoration images for slideshow
+import Decoration1 from '../assets/images/decoration/WhatsApp Image 2026-04-25 at 1.01.19 PM.jpeg';
+import Decoration2 from '../assets/images/decoration/WhatsApp Image 2026-04-25 at 1.02.01 PM.jpeg';
+import Decoration3 from '../assets/images/decoration/WhatsApp Image 2026-04-25 at 1.03.59 PM.jpeg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [floralSlideIndex, setFloralSlideIndex] = useState(0);
+  const [modalSlideIndex, setModalSlideIndex] = useState(0);
+
+  const floralImages = [Decoration1, Decoration2, Decoration3];
+
+  // Auto-advance slideshow in gallery grid
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFloralSlideIndex((prev) => (prev + 1) % floralImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [floralImages.length]);
+
+  // Auto-advance slideshow in modal
+  useEffect(() => {
+    if (selectedImage?.isSlideshow) {
+      const timer = setInterval(() => {
+        setModalSlideIndex((prev) => (prev + 1) % floralImages.length);
+      }, 3000);
+      return () => clearInterval(timer);
+    }
+  }, [selectedImage, floralImages.length]);
+
+  // Reset modal slide index when opening modal
+  useEffect(() => {
+    if (selectedImage?.isSlideshow) {
+      setModalSlideIndex(0);
+    }
+  }, [selectedImage]);
 
   const categories = [
     { id: 'all', name: 'All Photos' },
@@ -22,8 +57,8 @@ const Gallery = () => {
   // Placeholder images with emojis representing different aspects
   const galleryImages = [
     { id: 1, category: 'rath', title: 'Grand Rath Decoration', emoji: '🛕', description: 'The beautifully decorated chariot ready for the procession', image: RathRaw },
-    { id: 2, category: 'rath', title: 'Floral Arrangements', emoji: '🌸', description: 'Fresh flowers adorning the sacred chariot' },
-    { id: 3, category: 'celebration', title: 'Community Gathering', emoji: '👨‍👩‍👧‍👦', description: 'Devotees coming together in celebration' },
+    { id: 2, category: 'rath', title: 'Floral Arrangements', emoji: '🌸', description: 'Fresh flowers adorning the sacred chariot', isSlideshow: true },
+    { id: 3, category: 'celebration', title: 'Community Gathering', emoji: '👨‍👩‍👧‍👦', description: 'Devotees coming together in celebration', image: PrestigeView },
     { id: 4, category: 'celebration', title: 'Cultural Dance', emoji: '💃', description: 'Traditional Odissi dance performance' },
     { id: 5, category: 'prasad', title: 'Mahaprasad Thali', emoji: '🍛', description: 'Sacred prasad prepared with devotion' },
     { id: 6, category: 'prasad', title: 'Sweet Offerings', emoji: '🍮', description: 'Traditional sweets offered to the Lord' },
@@ -73,11 +108,34 @@ const Gallery = () => {
         {filteredImages.map((image, index) => (
           <div 
             key={image.id} 
-            className="gallery-item"
+            className={`gallery-item ${image.isSlideshow ? 'slideshow-item' : ''}`}
             onClick={() => setSelectedImage(image)}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            {image.image ? (
+            {image.isSlideshow ? (
+              <div className="slideshow-container">
+                {floralImages.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt={`${image.title} ${idx + 1}`}
+                    className={`slideshow-image ${idx === floralSlideIndex ? 'active' : ''}`}
+                  />
+                ))}
+                <div className="slideshow-dots">
+                  {floralImages.map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={`dot ${idx === floralSlideIndex ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFloralSlideIndex(idx);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : image.image ? (
               <img src={image.image} alt={image.title} className="gallery-image" />
             ) : (
               <div className="image-placeholder">
@@ -112,10 +170,45 @@ const Gallery = () => {
       {/* Modal for enlarged image */}
       {selectedImage && (
         <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
-          <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className={`modal-content ${selectedImage.isSlideshow ? 'modal-slideshow' : ''}`} onClick={e => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setSelectedImage(null)}>×</button>
             <div className="modal-image">
-              {selectedImage.image ? (
+              {selectedImage.isSlideshow ? (
+                <div className="modal-slideshow-container">
+                  {floralImages.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`${selectedImage.title} ${idx + 1}`}
+                      className={`modal-slideshow-image ${idx === modalSlideIndex ? 'active' : ''}`}
+                    />
+                  ))}
+                  <button 
+                    className="slideshow-nav prev" 
+                    onClick={() => setModalSlideIndex((prev) => (prev - 1 + floralImages.length) % floralImages.length)}
+                  >
+                    ‹
+                  </button>
+                  <button 
+                    className="slideshow-nav next" 
+                    onClick={() => setModalSlideIndex((prev) => (prev + 1) % floralImages.length)}
+                  >
+                    ›
+                  </button>
+                  <div className="modal-slideshow-dots">
+                    {floralImages.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`dot ${idx === modalSlideIndex ? 'active' : ''}`}
+                        onClick={() => setModalSlideIndex(idx)}
+                      />
+                    ))}
+                  </div>
+                  <div className="slideshow-counter">
+                    {modalSlideIndex + 1} / {floralImages.length}
+                  </div>
+                </div>
+              ) : selectedImage.image ? (
                 <img src={selectedImage.image} alt={selectedImage.title} className="modal-img" />
               ) : (
                 <span className="modal-emoji">{selectedImage.emoji}</span>

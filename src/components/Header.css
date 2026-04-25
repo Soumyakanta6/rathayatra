@@ -1,9 +1,90 @@
+/* Sloka Banner - Thin strip above header */
+.sloka-banner {
+  background: linear-gradient(90deg, #1a0a05, #2d1810, #3d2218, #2d1810, #1a0a05);
+  padding: 0.35rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.sloka-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.deity-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+.deity-subhadra {
+  width: 22px;
+  height: 22px;
+}
+
+.deity-sudarsan {
+  width: 22px;
+  height: 22px;
+}
+
+.sloka-content {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sloka-sanskrit {
+  font-size: 0.75rem;
+  color: #ffd700;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.sloka-odia {
+  font-size: 0.7rem;
+  color: #ffecb3;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 8px rgba(255, 236, 179, 0.4);
+}
+
+.sloka-divider {
+  color: #ffd700;
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 .header {
   background: 
     linear-gradient(135deg, rgba(180, 50, 20, 0.88) 0%, rgba(200, 100, 30, 0.82) 50%, rgba(200, 140, 40, 0.78) 100%),
     url('https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1600&q=80') center center / cover no-repeat;
   background-color: #b83;
-  padding: 1.25rem 1.5rem;
+  padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
@@ -35,6 +116,7 @@
   gap: 1rem;
   position: relative;
   z-index: 1;
+  padding: 1rem 1.5rem;
 }
 
 .header-logo {
@@ -91,14 +173,39 @@
 
 /* Tablet */
 @media (max-width: 768px) {
-  .header {
-    padding: 0.75rem 1rem;
+  .sloka-banner {
+    padding: 0.3rem 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .deity-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .deity-subhadra {
+    width: 18px;
+    height: 18px;
+  }
+
+  .deity-sudarsan {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sloka-sanskrit {
+    font-size: 0.65rem;
+  }
+
+  .sloka-odia {
+    font-size: 0.6rem;
   }
 
   .header-content {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
+    padding: 0.75rem 1rem;
   }
 
   .header-logo {
@@ -128,14 +235,48 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  .header {
-    padding: 0.6rem 0.75rem;
+  .sloka-banner {
+    padding: 0.25rem 0.4rem;
+    gap: 0.3rem;
+  }
+
+  .deity-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .deity-subhadra {
+    width: 14px;
+    height: 14px;
+  }
+
+  .deity-sudarsan {
+    width: 14px;
+    height: 14px;
+  }
+
+  .sloka-content {
+    gap: 0.25rem;
+  }
+
+  .sloka-sanskrit {
+    font-size: 0.5rem;
+    letter-spacing: 0.2px;
+  }
+
+  .sloka-odia {
+    font-size: 0.45rem;
+  }
+
+  .sloka-divider {
+    font-size: 0.5rem;
   }
 
   .header-content {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
   }
 
   .header-logo {

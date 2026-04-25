@@ -1,11 +1,12 @@
 .navigation {
-  background: #1a1a2e;
+  background: linear-gradient(135deg, #fff9f5 0%, #fef3e8 100%);
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 99;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(139, 69, 19, 0.15);
   width: 100%;
+  border-bottom: 1px solid rgba(205, 133, 63, 0.2);
 }
 
 .nav-container {
@@ -19,7 +20,7 @@
 .nav-tab {
   background: transparent;
   border: none;
-  color: #fff;
+  color: #5d3a1a;
   padding: 1rem 2rem;
   cursor: pointer;
   display: flex;
@@ -53,8 +54,8 @@
 }
 
 .nav-tab.active {
-  background: rgba(255, 107, 53, 0.3);
-  color: #ffd700;
+  background: rgba(255, 107, 53, 0.15);
+  color: #c44b16;
 }
 
 .nav-tab.active::after {
