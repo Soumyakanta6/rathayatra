@@ -165,60 +165,85 @@ ${partnerFormData.contactPerson}
 
   const sponsorshipTiers = [
     {
-      id: 'bhog',
-      name: 'Mahaprasad Sponsor',
-      amount: '₹25,000',
-      icon: '🍛',
-      color: '#f7931e',
+      id: 'title',
+      name: 'Title Sponsor',
+      amount: '₹1,00,000+',
+      icon: '👑',
+      color: '#8B0000',
       popular: true,
-      tagline: 'Most Popular',
+      tagline: 'Maximum Event Ownership',
       benefits: [
-        'Prasad sponsorship',
-        'Name display at venue',
-        'Certificate',
-        'Prasad for 25 families',
+        'Presented-by event branding',
+        'Main stage/backdrop logo',
+        'Premium stall placement',
+        'Invitation card mention',
+        'Social media mention',
+        'Flyer/product distribution',
+        'Felicitation during event',
       ],
     },
     {
-      id: 'pushpa',
-      name: 'Pushpa Seva',
+      id: 'platinum',
+      name: 'Platinum Sponsor',
+      amount: '₹50,000',
+      icon: '💎',
+      color: '#e5e4e2',
+      tagline: 'Large Local Brands',
+      benefits: [
+        'Large logo on key banners',
+        'Premium stall space',
+        'Invitation card mention',
+        'Flyer distribution',
+        'Standee placement',
+        'Social media mention',
+        'Clubhouse event (2-3 hrs)',
+        'Frequent announcements',
+      ],
+    },
+    {
+      id: 'gold',
+      name: 'Gold Sponsor',
+      amount: '₹25,000',
+      icon: '🥇',
+      color: '#ffd700',
+      tagline: 'Lead Generation',
+      benefits: [
+        'Logo on stage/backdrop',
+        'Logo on banners',
+        'Stall space',
+        'Standee placement',
+        'Clubhouse event (1-2 hrs)',
+        'Limited social media mention',
+        '4-5 announcements',
+        'Brochure/sample distribution',
+      ],
+    },
+    {
+      id: 'silver',
+      name: 'Silver Sponsor',
       amount: '₹10,000',
-      icon: '🌸',
-      color: '#e91e63',
-      tagline: 'Flower Decoration',
+      icon: '🥈',
+      color: '#c0c0c0',
+      tagline: 'Focused Local Recall',
       benefits: [
-        'Flower sponsorship',
-        'Name in program',
-        'Prasad for family',
-        'Certificate',
+        'Logo on selected banners',
+        '2-3 announcements',
+        'Limited social media mention',
+        'Brochure/flyer distribution',
       ],
     },
     {
-      id: 'deep',
-      name: 'Deep Seva',
-      amount: '₹5,000',
-      icon: '🪔',
-      color: '#9c27b0',
-      tagline: 'Light of Devotion',
-      benefits: [
-        'Lamp ceremony',
-        'Name in donor list',
-        'Seating (2 guests)',
-        'Prasad for family',
-      ],
-    },
-    {
-      id: 'seva',
-      name: 'Seva Daan',
-      amount: 'Any Amount',
-      icon: '🙏',
+      id: 'inkind',
+      name: 'In-Kind Sponsor',
+      amount: 'Equivalent Value',
+      icon: '🤝',
       color: '#4caf50',
-      tagline: 'Flexible Giving',
+      tagline: 'Material/Service Support',
       benefits: [
-        'Any contribution',
-        'Name in donor list',
-        'Divine blessings',
-        'Prasad packet',
+        'Branding per contribution value',
+        'Recognition as in-kind sponsor',
+        'Brand mention on sponsor board',
+        'Announcements as approved',
       ],
     },
   ];
@@ -280,116 +305,179 @@ ${partnerFormData.contactPerson}
   ];
 
   const inKindItems = [
-    { icon: '🌸', name: 'Flowers' },
-    { icon: '🥥', name: 'Coconuts' },
-    { icon: '🍚', name: 'Rice & Groceries' },
-    { icon: '🧵', name: 'Cloth & Fabric' },
-    { icon: '🕯️', name: 'Ghee & Oil' },
-    { icon: '🍬', name: 'Sweets & Fruits' },
+    { icon: '👕', name: 'Volunteer T-shirt Branding', amount: '₹5,000 - ₹15,000' },
+    { icon: '🍛', name: 'Prasad / Water Support', amount: 'In-kind' },
+    { icon: '🌸', name: 'Flower / Decoration Support', amount: 'In-kind' },
+    { icon: '🔊', name: 'Sound / Lighting / Printing', amount: 'In-kind' },
+    { icon: '🏥', name: 'Medical / Security Support', amount: 'In-kind' },
+  ];
+
+  const addOnOptions = [
+    { 
+      icon: '👕', 
+      name: 'Volunteer T-shirt Branding', 
+      amount: 'Rs. 5,000 - 15,000',
+      description: 'Logo/name placement on volunteer T-shirts based on final design space and sponsorship value.'
+    },
+    { 
+      icon: '🍛', 
+      name: 'Prasad / Water Support', 
+      amount: 'In-kind / equivalent value',
+      description: 'Recognition as in-kind sponsor; branding mapped to contribution level.'
+    },
+    { 
+      icon: '🌸', 
+      name: 'Flower / Decoration Support', 
+      amount: 'In-kind / equivalent value',
+      description: 'Brand mention on sponsor board and announcements, as approved.'
+    },
+    { 
+      icon: '🔊', 
+      name: 'Sound / Lighting / Printing', 
+      amount: 'In-kind / equivalent value',
+      description: 'Mapped benefits based on contribution and operational relevance.'
+    },
+    { 
+      icon: '🏥', 
+      name: 'Medical / Security Support', 
+      amount: 'In-kind / equivalent value',
+      description: 'Recognition for supporting safety and crowd management arrangements.'
+    },
   ];
 
   const partnershipPackages = [
     {
+      id: 'title',
+      name: 'Title Sponsor',
+      amount: '₹1,00,000+',
+      icon: '👑',
+      color: '#8B0000',
+      gradient: 'linear-gradient(135deg, #8B0000, #DC143C)',
+      recommended: true,
+      tagline: 'Maximum Event Ownership',
+      benefits: {
+        branding: [
+          { name: 'Presented-by Event Branding', included: true },
+          { name: 'Main Stage/Backdrop Logo', included: true },
+          { name: 'Prominent Banner Branding', included: true },
+          { name: 'Premium/High Visible Stall', included: true },
+        ],
+        digital: [
+          { name: 'Social Media Mentions', included: true },
+          { name: 'Event Announcement Mentions', included: true },
+        ],
+        event: [
+          { name: 'Invitation Card Mention', included: true },
+          { name: 'Felicitation During Event', included: true },
+        ],
+        extras: [
+          { name: 'Flyer/Product Distribution', included: true },
+          { name: 'Highest Announcement Frequency', included: true },
+          { name: 'Selected Communications Mention', included: true },
+          { name: 'Certificate of Appreciation', included: true },
+        ]
+      }
+    },
+    {
       id: 'platinum',
-      name: 'Platinum Partner',
-      amount: '₹40,000',
+      name: 'Platinum Sponsor',
+      amount: '₹50,000',
       icon: '💎',
       color: '#e5e4e2',
       gradient: 'linear-gradient(135deg, #e5e4e2, #b8b8b8)',
-      recommended: true,
-      tagline: 'Maximum Visibility & Impact',
+      tagline: 'Large Local Brands',
       benefits: {
         branding: [
-          { name: 'Logo on Main Stage Backdrop', included: true },
-          { name: 'Logo on Event Banner & Flexes', included: true },
-          { name: 'Logo on Invitation Cards', included: true },
-          { name: 'Dedicated Banner at Entrance', included: true },
+          { name: 'Large Logo on Key Banners', included: true },
+          { name: 'Logo on Sponsor Boards', included: true },
+          { name: 'Premium Stall Space', included: true },
+          { name: 'Standee Placement', included: true },
         ],
         digital: [
-          { name: 'Featured on Website Homepage', included: true },
-          { name: 'Video Credits & Mentions', included: true },
+          { name: 'Social Media Mentions', included: true },
+          { name: 'Frequent Event Announcements', included: true },
         ],
         event: [
-          { name: 'Stage Recognition & Speech', included: true },
-          { name: 'Reserved Seating (5 guests)', included: true },
+          { name: 'Invitation Card Mention', included: true },
+          { name: 'Clubhouse Event (2-3 hrs)', included: true },
         ],
         extras: [
-          { name: 'Product Display Stall (Premium)', included: true },
-          { name: 'Press Release Mention', included: true },
+          { name: 'Flyer Distribution Opportunity', included: true },
           { name: 'Certificate of Appreciation', included: true },
           { name: 'Photo/Video Documentation', included: true },
+          { name: 'Press Release Mention', included: false },
         ]
       }
     },
     {
       id: 'gold',
-      name: 'Gold Partner',
-      amount: '₹20,000',
+      name: 'Gold Sponsor',
+      amount: '₹25,000',
       icon: '🥇',
       color: '#ffd700',
       gradient: 'linear-gradient(135deg, #ffd700, #ffb300)',
-      tagline: 'High Visibility Partnership',
+      tagline: 'Lead Generation',
       benefits: {
         branding: [
-          { name: 'Logo on Main Stage Backdrop', included: true },
-          { name: 'Logo on Event Banner & Flexes', included: true },
-          { name: 'Logo on Invitation Cards', included: true },
-          { name: 'Dedicated Banner at Entrance', included: false },
+          { name: 'Logo on Stage/Backdrop', included: true },
+          { name: 'Logo on Selected Banners', included: true },
+          { name: 'Stall Space (Subject to Availability)', included: true },
+          { name: 'Standee Placement', included: true },
         ],
         digital: [
-          { name: 'Featured on Website Homepage', included: true },
-          { name: 'Video Credits & Mentions', included: false },
+          { name: 'Limited Social Media Mention', included: true },
+          { name: '4-5 Public Announcements', included: true },
         ],
         event: [
-          { name: 'Stage Recognition & Speech', included: true },
-          { name: 'Reserved Seating (3 guests)', included: true },
+          { name: 'Clubhouse Event (1-2 hrs)', included: true },
+          { name: 'Invitation Card Mention', included: false },
         ],
         extras: [
-          { name: 'Product Display Stall (Standard)', included: true },
-          { name: 'Press Release Mention', included: false },
+          { name: 'Brochure/Sample Distribution', included: true },
           { name: 'Certificate of Appreciation', included: true },
           { name: 'Photo/Video Documentation', included: true },
+          { name: 'Press Release Mention', included: false },
         ]
       }
     },
     {
       id: 'silver',
-      name: 'Silver Partner',
+      name: 'Silver Sponsor',
       amount: '₹10,000',
       icon: '🥈',
       color: '#c0c0c0',
       gradient: 'linear-gradient(135deg, #c0c0c0, #a8a8a8)',
-      tagline: 'Community Partnership',
+      tagline: 'Focused Local Recall',
       benefits: {
         branding: [
-          { name: 'Logo on Main Stage Backdrop', included: false },
-          { name: 'Logo on Event Banner & Flexes', included: true },
-          { name: 'Logo on Invitation Cards', included: true },
-          { name: 'Dedicated Banner at Entrance', included: false },
+          { name: 'Logo on Selected Banners', included: true },
+          { name: 'Logo on Sponsor Board', included: true },
+          { name: 'Stall Space', included: false },
+          { name: 'Standee Placement', included: false },
         ],
         digital: [
-          { name: 'Featured on Website Homepage', included: true },
-          { name: 'Video Credits & Mentions', included: false },
+          { name: 'Limited Social Media Mention', included: true },
+          { name: '2-3 Public Announcements', included: true },
         ],
         event: [
-          { name: 'Stage Recognition & Speech', included: false },
-          { name: 'Reserved Seating (2 guests)', included: true },
+          { name: 'Clubhouse Event', included: false },
+          { name: 'Invitation Card Mention', included: false },
         ],
         extras: [
-          { name: 'Product Display Stall', included: false },
-          { name: 'Press Release Mention', included: false },
+          { name: 'Brochure/Flyer Distribution (Approval Required)', included: true },
           { name: 'Certificate of Appreciation', included: true },
-          { name: 'Photo/Video Documentation', included: true },
+          { name: 'Photo/Video Documentation', included: false },
+          { name: 'Press Release Mention', included: false },
         ]
       }
     }
   ];
 
   const comparisonFeatures = [
-    { category: 'Branding', features: ['Logo on Main Stage', 'Event Banners & Flexes', 'Invitation Cards', 'Entrance Banner'] },
-    { category: 'Digital', features: ['Website Feature', 'Video Mentions'] },
-    { category: 'Event Access', features: ['Stage Recognition', 'Reserved Seating'] },
-    { category: 'Extras', features: ['Display Stall', 'Press Release', 'Certificate', 'Photo/Video'] }
+    { category: 'Branding', features: ['Main Stage/Backdrop Logo', 'Event Banners', 'Invitation Cards', 'Standee Placement'] },
+    { category: 'Digital', features: ['Social Media Mentions', 'Event Announcements'] },
+    { category: 'Event Access', features: ['Clubhouse Event', 'Stall Space'] },
+    { category: 'Extras', features: ['Flyer Distribution', 'Felicitation', 'Certificate', 'Photo/Video'] }
   ];
 
   return (
@@ -452,9 +540,9 @@ ${partnerFormData.contactPerson}
       <section className="sponsor-tiers-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">💝 Support the Festival</span>
-            <h2>Donation/Seva Packages</h2>
-            <p>Choose a seva that resonates with your heart</p>
+            <span className="section-label">💝 Sponsorship Packages</span>
+            <h2>Choose Your Sponsorship Level</h2>
+            <p>Partner with us and earn divine blessings</p>
           </div>
           
           <div className="tiers-grid">
@@ -518,74 +606,24 @@ ${partnerFormData.contactPerson}
         </div>
       </section>
 
-      {/* Partnership Packages Overview */}
-      <section className="partnership-overview-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">🏢 Corporate Partnership</span>
-            <h2>Partnership Packages</h2>
-            <p>View our partnership tiers and benefits</p>
-          </div>
-
-          <div className="partnership-cards-grid">
-            {partnershipPackages.map((pkg) => (
-              <div 
-                key={pkg.id} 
-                className={`partnership-overview-card ${pkg.id} ${pkg.recommended ? 'recommended' : ''}`}
-                style={{ '--pkg-color': pkg.color, '--pkg-gradient': pkg.gradient }}
-              >
-                {pkg.recommended && <div className="recommended-badge-overview">⭐ Best Value</div>}
-                <div className="pkg-overview-header">
-                  <span className="pkg-overview-icon">{pkg.icon}</span>
-                  <h3 className="pkg-overview-name">{pkg.name}</h3>
-                  <div className="pkg-overview-amount">{pkg.amount}</div>
-                </div>
-                <div className="pkg-overview-benefits">
-                  <div className="overview-benefit-cat">
-                    <strong>🎨 Branding</strong>
-                    <ul>
-                      {pkg.benefits.branding.slice(0, 3).map((b, i) => (
-                        <li key={i} className={b.included ? 'included' : 'excluded'}>
-                          {b.included ? '✓' : '✗'} {b.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="overview-benefit-cat">
-                    <strong>🎟️ Event Access</strong>
-                    <ul>
-                      {pkg.benefits.event.map((b, i) => (
-                        <li key={i} className={b.included ? 'included' : 'excluded'}>
-                          {b.included ? '✓' : '✗'} {b.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="partnership-note">
-            <span>💡</span>
-            <p>Click <strong>"Become a Sponsor"</strong> in the header to apply for partnership</p>
-          </div>
-        </div>
-      </section>
-
-      {/* In-Kind Donations */}
+      {/* Add-on & In-Kind Sponsorship Options */}
       <section className="inkind-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">🎁 In-Kind Donations</span>
-            <h2>Non-Monetary Contributions Welcome</h2>
+            <span className="section-label">🎁 Add-on & In-Kind Options</span>
+            <h2>Add-on and In-Kind Sponsorship Options</h2>
+            <p>Support through materials and services with visibility benefits</p>
           </div>
           
           <div className="inkind-grid">
-            {inKindItems.map((item, index) => (
-              <div key={index} className="inkind-chip">
-                <span>{item.icon}</span>
-                <strong>{item.name}</strong>
+            {addOnOptions.map((item, index) => (
+              <div key={index} className="inkind-card">
+                <span className="inkind-icon">{item.icon}</span>
+                <div className="inkind-info">
+                  <strong>{item.name}</strong>
+                  <span className="inkind-amount">{item.amount}</span>
+                  <p className="inkind-desc">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
