@@ -75,7 +75,7 @@ const Footer = ({ setActiveTab }) => {
               </a>
               <div className="contact-item">
                 <span className="icon">📍</span>
-                <span>Prestige Finsbury Park, Gunjur, Bangalore</span>
+                <span>Prestige Finsbury Park, KIADB Aerospace Park, Bagalur, Bangalore</span>
               </div>
             </div>
           </div>
