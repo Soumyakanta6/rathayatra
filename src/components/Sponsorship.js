@@ -272,27 +272,6 @@ ${partnerFormData.contactPerson}
         emoji: '🧺',
         tagline: 'Premium Laundry Services',
         color: '#2196F3'
-      },
-      { 
-        name: 'FreshMart', 
-        logo: '', 
-        emoji: '🛒',
-        tagline: 'Fresh Groceries Delivered',
-        color: '#4CAF50'
-      },
-      { 
-        name: 'TechHub', 
-        logo: '', 
-        emoji: '💻',
-        tagline: 'IT Solutions & Services',
-        color: '#9C27B0'
-      },
-      { 
-        name: 'GreenLeaf Cafe', 
-        logo: '', 
-        emoji: '☕',
-        tagline: 'Organic Food & Beverages',
-        color: '#8BC34A'
       }
     ]
   };
