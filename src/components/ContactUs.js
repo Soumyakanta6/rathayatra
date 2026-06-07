@@ -29,7 +29,7 @@ const ContactUs = () => {
 
   const contactMethods = [
     { icon: '📧', title: 'Email Us', value: CONTACT_EMAIL, action: `mailto:${CONTACT_EMAIL}`, type: 'link' },
-    { icon: '📍', title: 'Visit Us', value: 'Prestige Finsbury Park, Gunjur, Bangalore', action: null, type: 'text' },
+    { icon: '📍', title: 'Visit Us', value: 'Prestige Finsbury Park, KIADB Aerospace Park, Bagalur, Bangalore', action: null, type: 'text' },
     { icon: '📅', title: 'Event Dates', value: 'July 16-25, 2026', action: null, type: 'text' },
   ];
 
