@@ -171,21 +171,6 @@ ${formData.contactPerson}`;
         logo: 'https://spincycleindia.com/wp-content/uploads/2023/01/spin-cycle-logo.png',
         emoji: '🧺',
         tagline: 'Premium Laundry' 
-      },
-      { 
-        name: 'FreshMart', 
-        emoji: '🛒',
-        tagline: 'Fresh Groceries' 
-      },
-      { 
-        name: 'TechHub', 
-        emoji: '💻',
-        tagline: 'IT Solutions' 
-      },
-      { 
-        name: 'GreenLeaf Cafe', 
-        emoji: '☕',
-        tagline: 'Organic Food' 
       }
     ]
   };
